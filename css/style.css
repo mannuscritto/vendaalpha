@@ -1,0 +1,205 @@
+/*
+ * Autor: Twitter @mannuscritto2;
+ * Data de modificação: 02/10/2018;
+ */
+
+@charset "UTF-8";
+
+/* Configurando <body> */
+body {
+	margin: 0;
+	font-family: Arial, sans-serif;
+	font-size: 12pt;
+}
+
+/* Resetando os links para não ficarem marcados */
+a:link, a:visited, a:active {
+	color: inherit;
+	text-decoration: inherit;
+}
+
+/* Fronte */
+/* Cabeçalho da página */
+.fronte {
+	width: 100%;
+	height: 24.36%;
+	background-image: url('../media/logo-topo.png');/* Endereço da imagem de fundo */
+	background-size: cover;
+	background-position: center;
+}
+
+/* Imagem do logo do cabeçalho da página */
+.fronte img {
+	visibility: hidden;
+	width: 100%;
+	height: 100%;
+}
+/* Fim Fronte */
+
+/* Barra de Navegação */
+/* Barra de navegação abaixo do cabeçalho */
+.navegacao {
+	background-color: black;
+	/*padding: 1% 0;*/
+	position: relative;
+	/*max-height: 15%;*/
+	height: 100px;
+}
+
+/* Botão dentro da barra de navegação */
+.nav-button {
+	background-color: red!important;
+	color: white;
+	font-weight: bold;
+	padding: 1.5em!important;
+}
+/* Fim Barra de Navegação */
+
+/* Mostrador */
+/* Área de mostrar os produtos */
+.mostrador {
+	background-color: #D8D8D8;
+}
+
+/* Espaço para mostrar os produtos individualmente */
+.mostrador .produto {
+	background-color: white;
+	display: inline-block;
+	padding: 1% 0;
+	width: 19%;
+	margin: 0.5%;
+}
+
+/* Área das imagens do produto */
+.mostrador .produto .ilustracao {
+	margin: 0 1em;
+	position: relative;
+}
+
+/* Imagem principal do produto */
+.mostrador .produto .ilustracao .principal {
+	width: 100%;
+}
+
+/* Imagem lateral dos produtos - igual para todos */
+.mostrador .produto .ilustracao .lateral {
+	width: 50%;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+/* Rodapé de cada produto com descrição */
+.mostrador .produto .descricao {
+	font-weight: bold;
+}
+
+/* Preço do produto */
+.mostrador .produto .descricao .preco {
+	font-weight: bold;
+}
+
+/* Texto antes do valor do preço */
+.mostrador .produto .descricao .preco::before {
+	content: "R$ ";
+}
+
+/* Texto depois do valor do preço */
+.mostrador .produto .descricao .preco::after {
+	content: " x unid."
+}
+
+/* Área em que fica o botão de comprar */
+.mostrador .produto .descricao aside {
+	margin-top: 50%;
+}
+
+/* Imagem que fica dentro da div.btnComprar */
+.mostrador .produto .descricao .btnComprar img {
+	visibility: hidden;/* A imagem apenas ocupa espaço */
+	width: 100%;
+	height: 100%;
+}
+
+/* div.btnComprar */
+.btnComprar {
+	background: url('../media/btn.png') no-repeat;/* Coloca o fundo no botão */
+	background-size: 100%;
+	background-position: center;
+	transition: all 0.2s ease-out;
+	cursor: pointer;
+}
+
+/* Hover da div.btnComprar */
+.btnComprar:hover {
+	background: url('../media/btn2.png') no-repeat;/* O URL do fundo troca */
+	background-size: 100%;
+	background-position: center;
+}
+
+/* Para telas menores que 800px */
+@media screen and (max-width: 800px) {
+	/* A área do produto ocupa a tela - não fica dividida e pequena */
+	.mostrador .produto {
+		width: 98%;
+		margin: 5% auto;
+	}
+	
+	/* O botão comprar fica menor e centralizado */
+	.mostrador .produto .descricao .btnComprar {
+		width: 50%;
+		margin: 0 auto;
+	}
+	
+	/* A área em que fica o botão ocupa um espaço maior */
+	.mostrador .produto .descricao aside {
+		width: 100%;
+		margin-top: 5%;/* E não fica tão abaixo */
+	}
+	
+	/* A imagem lateral diminui */
+	.mostrador .produto .ilustracao .lateral {
+		width: 25%;
+	}
+}
+/* Fim Mostrador */
+
+/* Garantia */
+/* Área da Garantia */
+.garantia {
+	background-color: #0B2161;
+	color: white;
+}
+/* Fim Garantia */
+
+/* Rodapé
+ * Para que as 3 áreas que dividem o rodapé ficassem com a mesma altura,
+ * foi necessário colocar cada uma com um container e tratá-las como colunas
+ */
+/* As áreas que dividem o rodapé */
+.rodape .container1, .rodape .container2, .rodape .container3 {
+	width: 100%;
+	float: left;/* Flutuam para a esquerda */
+}
+
+/* Container mais externo */
+.rodape .container3 {
+	overflow:hidden;
+    position:relative;
+}
+
+/* Container mais internos - alinham para ESQUERDA */
+.rodape .container2, .rodape .container1 {
+	position: relative;
+	right: 33.33%;/* O container 2 fica 33.33% para a direita e o container 1 fica 66.66% (33.33 * 2) para a direita*/
+}
+
+/* Colunas */
+.rodape .column1, .rodape .column2, .rodape .column3 {
+	width: 33.33%;
+	float: left;
+	position: relative;
+	left: 66.66%;
+	overflow: hidden;
+}
+/* Fim Rodapé */
