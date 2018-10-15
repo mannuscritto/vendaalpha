@@ -171,6 +171,14 @@ a:link, a:visited, a:active {
 	color: white;
 }
 /* Fim Garantia */
+/* Área de Finalização */
+.finalizacao img {
+	width: 50%;
+}
+.finalizacao aside figure img {
+	margin: 0.5em auto;
+}
+/* Fim Finalização */
 
 /* Rodapé
  * Para que as 3 áreas que dividem o rodapé ficassem com a mesma altura,
